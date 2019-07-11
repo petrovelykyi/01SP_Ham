@@ -23,13 +23,14 @@
       <span class="logo-white-text">the</span><span class="logo-green-text">Ham</span>
     </a>
     <div class="menu">
-      <a href="#">HOME</a>
-      <a href="#">ABOUT</a>
-      <a href="#">SERVICES</a>
-      <a href="#">WORK</a>
-      <a href="#">NEWS</a>
-      <a href="#">TESTIMONIALS</a>
-      <a href="#">GALLERY</a>
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#services">SERVICES</a>
+      <a href="#purchase">PURCHASE</a>
+      <a href="#work">WORK</a>
+      <a href="#news">NEWS</a>
+      <a href="#testimonials">TESTIMONIALS</a>
+      <a href="#gallery">GALLERY</a>
       <a href="#">
         <i class="fas fa-search"></i>
       </a>
@@ -76,7 +77,6 @@
 <!--Services-->
 <section id="services" class="container indents">
   <h2 class="main-header">Our Services</h2>
-  <div class="skiing"></div>
 
   <div class="tabs">
     <ul class="tabs-caption">
@@ -130,7 +130,6 @@
 <section id="work" class="container indents">
 
   <h2 class="main-header">Our Amazing Work</h2>
-  <div class="skiing"></div>
 
   <div class="filter-tabs">
     <template id="amazing-work">
@@ -172,9 +171,8 @@
   <hr class="separator-shadow">
 </div>
 <!--Breaking News-->
-<section id="news" class="container indents section-shadow">
+<section id="news" class="container indents">
   <h2 class="main-header">Breaking News</h2>
-  <div class="skiing"></div>
 
   <div class="tiles-wrapper">
     <a href="#" class="tile">
@@ -267,30 +265,131 @@
     </a>
   </div>
 </section>
+<!--Section shadow-->
+<div class="separator">
+  <hr class="separator-shadow">
+</div>
+<!--What People Say-->
+<section id="testimonials" class="section-testimonials indents section-shadow">
+  <h2 class="main-header main-header--white">What People Say About theHam</h2>
+  <img src="img/testimonials/quotes.svg" alt="quotes">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur consequuntur corporis dicta dolor eligendi esse incidunt ipsum laborum perspiciatis, praesentium quas quia quod sit suscipit tenetur ullam?</p>
 
-<section id="testimonials">
   <div class="carousel">
     <div class="carousel__track-wrapper">
-        <div class="carousel__track">
-
+      <div class="carousel__track">
+        <div class="carousel__slide active">
+          <h5>JOHN WICK</h5>
+          <p>Front-End Developer</p>
+          <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
+            <img src="img/testimonials/face-1.png" alt="">
+          </a>
         </div>
+        <div class="carousel__slide active">
+          <h5>PETER PARKER</h5>
+          <p>Tester</p>
+          <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
+            <img src="img/testimonials/face-2.png" alt="">
+          </a>
+        </div>
+        <div class="carousel__slide">
+          <h5>JESSICA JONES</h5>
+          <p>Graphics Designer</p>
+          <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
+            <img src="img/testimonials/face-3.png" alt="">
+          </a>
+        </div>
+        <div class="carousel__slide">
+          <h5>STEVE ROGERS</h5>
+          <p>Business Analyst</p>
+          <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
+            <img src="img/testimonials/face-4.png" alt="">
+          </a>
+        </div>
+        <div class="carousel__slide">
+          <h5>BRUCE WAYNE</h5>
+          <p>System Architect</p>
+          <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
+            <img src="img/testimonials/face-5.png" alt="">
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="carousel__icons">
+      <ul class="carousel__icons-nav">
+        <li class="carousel__icon active">
+          <div class="circle-img-wrapper circle-img-wrapper--small">
+            <img src="img/testimonials/face-1.png" alt="">
+          </div>
+        </li>
+        <li class="carousel__icon">
+          <div class="circle-img-wrapper circle-img-wrapper--small">
+            <img src="img/testimonials/face-2.png" alt="">
+          </div>
+        </li>
+        <li class="carousel__icon">
+          <div class="circle-img-wrapper circle-img-wrapper--small">
+            <img src="img/testimonials/face-3.png" alt="">
+          </div>
+        </li>
+        <li class="carousel__icon">
+          <div class="circle-img-wrapper circle-img-wrapper--small">
+            <img src="img/testimonials/face-4.png" alt="">
+          </div>
+        </li>
+        <li class="carousel__icon">
+          <div class="circle-img-wrapper circle-img-wrapper--small">
+            <img src="img/testimonials/face-5.png" alt="">
+          </div>
+        </li>
+      </ul>
+      <button class="carousel__btn carousel__btn--left" disabled><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel__btn carousel__btn--right"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+<!--Section shadow-->
+<div class="separator">
+  <hr class="separator-shadow">
+</div>
+<!--Gallery of best images-->
+<section id="gallery" class="container indents">
+  <h2 class="main-header">Gallery of best images</h2>
+
+  <div class="grid">
+<!--    <div class="grid-item">-->
+<!--      <img src="img/gallery/hot-news-1.png" alt="">-->
+<!--    </div>-->
+
+  </div>
+
+  <button class="btn btn-green">
+    <i class="fas fa-plus"></i> LOAD MORE
+  </button>
+
+</section>
+
+<section id="modal__windows">
+  <div id="modal__show-image" class="modal__wrapper">
+    <div class="modal__window">
+      <img src="" alt="">
+      <button class="modal__btn modal__btn--prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="modal__btn modal__btn--next"><i class="fas fa-chevron-right"></i></button>
+      <button class="modal__btn-close"><i class="fas fa-times"></i></button>
     </div>
   </div>
 
 </section>
 
-<section id="gallery">
 
-</section>
-
-<footer id="footer">
-
+<!--Footer-->
+<footer id="footer" class="footer">
+  <p>&copy; Copyright 2019 <span>theHam</span> | All Rights Reserved</p>
 </footer>
 
-
-
-
-
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
