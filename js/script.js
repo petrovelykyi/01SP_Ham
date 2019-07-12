@@ -167,18 +167,27 @@ function loading() {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    // let windowHeight = window.innerHeight;
+    let scrollHeight = 800;
     const menuStyle = document.querySelector("#menu").style;
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    if (document.body.scrollTop > scrollHeight || document.documentElement.scrollTop > scrollHeight) {
         menuStyle.height = "80px";
         menuStyle.backgroundColor = "rgba(0,0,0,1)";
-        // document.getElementById("backToTop").style.display = "block";
+        document.getElementById("backToTop").style.display = "block";
     } else {
         menuStyle.height = "120px";
         menuStyle.backgroundColor = "rgba(0,0,0,0.5)";
-        // document.getElementById("backToTop").style.display = "none";
+        document.getElementById("backToTop").style.display = "none";
     }
 }
+
+document.querySelector('#backToTop').addEventListener('click', function () {
+    document.documentElement.scroll(
+        {
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+});
 
 function scrollToSection(element) {
     // Menu height correction in px

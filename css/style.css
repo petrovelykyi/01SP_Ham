@@ -9,6 +9,7 @@ a {
 :focus {outline: none;}
 ::-moz-focus-inner {border: 0;}
 
+/*Preloader*/
 #preloader {
   background-color: #222;
   position: fixed;
@@ -29,7 +30,7 @@ a {
   margin: -75px 0 0 -75px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #9370DB;
+  border-top-color: #203e38;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
@@ -43,7 +44,7 @@ a {
   bottom: 5px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #BA55D3;
+  border-top-color: #18CFAB;
   -webkit-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
@@ -57,7 +58,7 @@ a {
   bottom: 15px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #FF00FF;
+  border-top-color: white;
   -webkit-animation: spin 1.5s linear infinite;
   animation: spin 1.5s linear infinite;
 }
@@ -88,6 +89,25 @@ a {
   }
 }
 
+/* Button BackToTop*/
+.btn-back-to-top {
+  display: none;
+  position: fixed;
+  right: 50px;
+  bottom: 120px;
+  z-index: 7;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  outline: none;
+  border: 2px solid #203e38;
+  color: white;
+  font-size: 24px;
+  background-color: #203e38;
+  cursor: pointer;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
 /*Common style*/
 .container {
   width: 1160px;
@@ -116,6 +136,7 @@ hr {
   text-align: center;
 }
 
+/*Menu*/
 .menu-bar {
   position: fixed;
   top: 0;
@@ -229,6 +250,7 @@ hr {
   border-bottom: 3px solid #18CFAB;
 }
 
+/*Home*/
 .section-home {
   display: flex;
   align-items: center;
@@ -279,13 +301,14 @@ hr {
 }
 
 .btn {
+  display: inline-block;
   width: 168px;
   height: 64px;
+  line-height: 64px;
   color: white;
   font-size: 14px;
   font-weight: 700;
-  outline: none;
-  border: none;
+  border: 1px solid grey;
   margin: 20px;
   border-radius: 5px;
 }
@@ -310,6 +333,7 @@ hr {
   border: 1px solid #00cbf6;
 }
 
+/*About*/
 .section-about {
   display: flex;
   flex-direction: row;
@@ -745,7 +769,7 @@ hr {
 }
 
 .section-testimonials {
-  height: 80vh;
+  height: 740px;
   background: url("../img/section-3.jpg") rgba(0,0,0,.5) center fixed;
   background-blend-mode: overlay;
   background-size: cover;
