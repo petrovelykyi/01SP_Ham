@@ -1,5 +1,6 @@
 'use strict';
 
+// Loading images emulation
 const imageStorage = [
     {
         type: "graphic-design",
@@ -147,6 +148,22 @@ const imageStorage = [
     }
 ];
 
+// Preloader
+window.onload = function() {
+    const preloader = document.getElementById('preloader')
+    preloader.setAttribute('hidden', '');
+    preloader.style.backgroundColor = 'rgba(0,0,0,0.5)';
+};
+
+// Loading emulation
+function loading() {
+    document.getElementById('preloader').removeAttribute('hidden');
+    setTimeout(function () {
+        document.getElementById('preloader').setAttribute('hidden', '');
+    }, 3000);
+}
+
+// Menu and button onTop
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -178,7 +195,7 @@ function scrollToSection(element) {
 document.querySelectorAll('.menu a').forEach(function (el) {
     el.addEventListener('click', function (e) {
         e.preventDefault();
-        if (e.target.closest('A') ) {
+        if (e.target.closest('A')) {
             scrollToSection(document.getElementById(e.target.hash.slice(1)));
         }
     })
@@ -246,6 +263,7 @@ document.querySelectorAll('.filter-tabs').forEach(function (item) {
 
     // Handling click on "LoadMore" images
     item.querySelector('.filter-tabs .btn').addEventListener('click', function (event) {
+        loading();
         const cards = getImagesFromServer(portion, event.target);
         if (cards !== null) {
             cardList.appendChild(cards);
@@ -353,7 +371,7 @@ document.querySelectorAll('.carousel').forEach(function (item) {
 });
 
 // Section Gallery
-//Masonry
+// Generation images from server
 const gridItems = [];
 const grid = document.querySelector(".grid");
 const generateImages = (el, count = 16) => {
@@ -366,14 +384,13 @@ const generateImages = (el, count = 16) => {
     const newImage = () => {
         const item = document.createElement("div");
         item.className = "grid-item";
-        item.setAttribute('data-id', generateImages.id);
-        generateImages.id++;
-
 
         const content = document.createElement("img");
         const width = getRandomSize(100, 600);
         const height = getRandomSize(100, 400);
         content.src = `https://picsum.photos/${width}/${height}`;
+        content.setAttribute('data-id', generateImages.id);
+        generateImages.id++;
 
         item.appendChild(content);
         gridItems.push({ item, content });
@@ -386,7 +403,8 @@ const generateImages = (el, count = 16) => {
     el.appendChild(images);
 };
 
-function orderImages() {
+// Masonry Plugin usage
+function arrangeImages() {
     imagesLoaded(document.querySelector('.grid'), function() {
         const msnry = new Masonry( grid, {
             itemSelector: '.grid-item',
@@ -397,51 +415,62 @@ function orderImages() {
     });
 }
 
-generateImages(grid, 3);
-orderImages();
+generateImages(grid, 6);
+arrangeImages();
 
+// Load More button
 document.querySelector('#gallery .btn').addEventListener('click', function () {
+    loading();
     generateImages(grid, 16);
-    orderImages();
+    arrangeImages();
 });
 
-
+// Click on image to open modal window
 document.querySelector('.grid').addEventListener('click', function (e) {
     if (e.target.closest('IMG')) {
         const modal = document.getElementById('modal__show-image');
         const img = modal.querySelector('.modal__window img');
-        const itemId = e.target.parentNode.dataset.id;
+        const itemId = e.target.dataset.id;
         img.src = gridItems[itemId].content.src;
         img.setAttribute('data-id', itemId);
         modal.style.display = 'flex';
     }
 });
 
-document.querySelector('.modal__window .modal__btn--prev').addEventListener('click',  (e) => {
-    const itemId = parseInt(document.querySelector('#modal__show-image .modal__window img').dataset.id);
-    if (itemId === 0) {
-        e.currentTarget.disabled = true;
-        e.currentTarget.nextElementSibling.disabled = false;
-    } else {
-        const prevItemId = parseInt(itemId) - 1;
-        e.currentTarget.parentNode.firstElementChild.src = document.querySelector('.grid').children[prevItemId].firstElementChild.src;
-        e.currentTarget.parentNode.firstElementChild.dataset.id = prevItemId;
+// Change image in modal window
+function changeImage(that) {
+    const imgId = parseInt(document.querySelector('#modal__show-image .modal__window img').dataset.id);
+    let targetImgId;
+    if (that.dataset.target === 'prev') {
+        if (imgId === 0) {
+            targetImgId = gridItems.length - 1;
+        } else {
+            targetImgId = imgId - 1;
+        }
     }
+
+    if (that.dataset.target === 'next') {
+        if (imgId === gridItems.length - 1) {
+            targetImgId = 0;
+        } else {
+            targetImgId = imgId + 1;
+        }
+    }
+    that.parentNode.children[1].firstElementChild.src = gridItems[targetImgId].content.src;
+    that.parentNode.children[1].firstElementChild.dataset.id = targetImgId;
+}
+
+// Button Prev listener
+document.querySelector('.modal__wrapper .modal__btn--prev').addEventListener('click',  function () {
+    changeImage(this);
 });
 
-document.querySelector('.modal__window .modal__btn--next').addEventListener('click',  (e) => {
-    const itemId = parseInt(document.querySelector('#modal__show-image .modal__window img').dataset.id);
-    // debugger
-    if (itemId === document.querySelector('.grid').children.length - 1) {
-        e.currentTarget.disabled = true;
-        e.currentTarget.previousElementSibling.disabled = false;
-    } else {
-        const nextItemId = parseInt(itemId) + 1;
-        e.currentTarget.parentNode.firstElementChild.src = document.querySelector('.grid').children[nextItemId].firstElementChild.src;
-        e.currentTarget.parentNode.firstElementChild.dataset.id = nextItemId;
-    }
+// Button Next listener
+document.querySelector('.modal__wrapper .modal__btn--next').addEventListener('click',  function () {
+    changeImage(this);
 });
 
-document.querySelector('.modal__window .modal__btn-close').addEventListener('click', () => {
+// Button Close listener
+document.querySelector('.modal__wrapper .modal__btn-close').addEventListener('click', () => {
     document.getElementById('modal__show-image').style.display = 'none';
 });

@@ -6,9 +6,89 @@ a {
   text-decoration: none;
 }
 
-:focus {outline:none;}
-::-moz-focus-inner {border:0;}
+:focus {outline: none;}
+::-moz-focus-inner {border: 0;}
 
+#preloader {
+  background-color: #222;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #9370DB;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #BA55D3;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #FF00FF;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0%   {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0%   {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*Common style*/
 .container {
   width: 1160px;
   margin: 0 auto;
@@ -777,7 +857,6 @@ hr {
 /*End of Masonry lib*/
 
 /*Modal window*/
-
 .modal__wrapper {
   display: none;
   align-items: center;
@@ -792,49 +871,59 @@ hr {
 }
 
 .modal__window {
-  position: relative;
   border: 6px solid white;
+  border-radius: 3px;
+  line-height: 0;
 }
 
-.modal__window .modal__btn-close {
+.modal__btn-close {
   position: absolute;
-  width: 32px;
-  height: 32px;
-  top: -44px;
-  right: -6px;
+  width: 48px;
+  height: 48px;
+  top: 16px;
+  right: 16px;
   outline: none;
-  color: white;
+  color: #777777;
   font-size: 24px;
-  border: 2px solid white;
+  border: 2px solid #777777;
   border-radius: 3px;
   background: rgba(0,0,0,0.1);
   cursor: pointer;
 }
 
-.modal__btn {
-  position: absolute;
-  top: 0;
-  width: 64px;
-  height: 100%;
+.modal__btn-close:hover {
   color: white;
+  border-color: white;
+}
+
+.modal__btn {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #777777;
   border: none;
   outline: none;
   background-color: transparent;
   cursor: pointer;
+  font-size: 48px;
+}
+
+.modal__btn:hover {
+  color: white;
 }
 
 .modal__btn--prev {
-  left: -70px;
-  text-align: right;
+  left: 0;
+  text-align: left;
+  padding-left: 48px;
 }
 
 .modal__btn--next {
-  right: -70px;
-  text-align: left;
+  right: 0;
+  text-align: right;
+  padding-right: 48px;
 }
-
 /*End of Modal window*/
-
 
 .footer {
   height: 108px;
