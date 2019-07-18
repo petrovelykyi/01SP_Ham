@@ -43,9 +43,14 @@
         <a href="#news">NEWS</a>
         <a href="#testimonials">TESTIMONIALS</a>
         <a href="#gallery">GALLERY</a>
-        <a href="#">
-          <i class="fas fa-search"></i>
-        </a>
+        <div class="search-container">
+          <form class="form-search ">
+            <input type="text" class="form-search__input"
+                   name="search"
+                   placeholder="Search...">
+            <button type="submit" class="form-search__btn"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
       </div>
     </div>
   </nav>
@@ -53,9 +58,9 @@
   <section id="home" class="section-home">
     <div class="home-wrapper">
       <div class="home-headers">
-        <p class="home-header-1"><span class="white-text">THE HAM IS</span> <span class="green-text">WORDPRESS THEME</span></p>
-        <p class="home-header-2">WE ARE CREATIVE</p>
-        <p class="home-header-3">Just Buy And Enjoy These Awesome Features</p>
+        <p class="home-header-medium"><span class="white-text">THE HAM IS</span> <span class="green-text">WORDPRESS THEME</span></p>
+        <p class="home-header-big">WE ARE CREATIVE</p>
+        <p class="home-header-small">Just Buy And Enjoy These Awesome Features</p>
       </div>
       <div class="btn-group">
         <a href="#" class="btn btn-green">EXPLORE NOW</a>
@@ -188,7 +193,7 @@
 
     <div class="tiles-wrapper">
       <a href="#" class="tile">
-        <img src="img/news/news-1.png" alt="">
+        <img src="img/news/news-1.png" alt="img/news/news-1.png">
         <h4>Amazing Blog Post</h4>
         <p>
           <span>By Admin</span><span>2 comments</span>
@@ -199,7 +204,7 @@
         </div>
       </a>
       <a href="#" class="tile">
-        <img src="img/news/news-2.png" alt="">
+        <img src="img/news/news-2.png" alt="img/news/news-2.png">
         <h4>Amazing Blog Post</h4>
         <p>
           <span>By Admin</span><span>2 comments</span>
@@ -210,7 +215,7 @@
         </div>
       </a>
       <a href="#" class="tile">
-        <img src="img/news/news-3.png" alt="">
+        <img src="img/news/news-3.png" alt="img/news/news-3.png">
         <h4>Amazing Blog Post</h4>
         <p>
           <span>By Admin</span><span>2 comments</span>
@@ -221,7 +226,7 @@
         </div>
       </a>
       <a href="#" class="tile">
-        <img src="img/news/news-4.png" alt="">
+        <img src="img/news/news-4.png" alt="img/news/news-4.png">
         <h4>Amazing Blog Post</h4>
         <p>
           <span>By Admin</span><span>2 comments</span>
@@ -232,7 +237,7 @@
         </div>
       </a>
       <a href="#" class="tile">
-        <img src="img/news/news-5.png" alt="">
+        <img src="img/news/news-5.png" alt="img/news/news-5.png">
         <h4>Amazing Blog Post</h4>
         <p>
           <span>By Admin</span><span>2 comments</span>
@@ -243,7 +248,7 @@
         </div>
       </a>
       <a href="#" class="tile">
-        <img src="img/news/news-6.png" alt="">
+        <img src="img/news/news-6.png" alt="img/news/news-6.png">
         <h4>Amazing Blog Post</h4>
         <p>
           <span>By Admin</span><span>2 comments</span>
@@ -254,7 +259,7 @@
         </div>
       </a>
       <a href="#" class="tile">
-        <img src="img/news/news-7.png" alt="">
+        <img src="img/news/news-7.png" alt="img/news/news-7.png">
         <h4>Amazing Blog Post</h4>
         <p>
           <span>By Admin</span><span>2 comments</span>
@@ -265,7 +270,7 @@
         </div>
       </a>
       <a href="#" class="tile">
-        <img src="img/news/news-8.png" alt="">
+        <img src="img/news/news-8.png" alt="img/news/news-8.png">
         <h4>Amazing Blog Post</h4>
         <p>
           <span>By Admin</span><span>2 comments</span>
@@ -285,44 +290,48 @@
   <section id="testimonials" class="section-testimonials indents section-shadow">
     <h2 class="main-header main-header--white">What People Say About theHam</h2>
     <img src="img/testimonials/quotes.svg" alt="quotes">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur consequuntur corporis dicta dolor eligendi esse incidunt ipsum laborum perspiciatis, praesentium quas quia quod sit suscipit tenetur ullam?</p>
 
     <div class="carousel">
       <div class="carousel__track-wrapper">
         <div class="carousel__track">
           <div class="carousel__slide active">
+            <p class="carousel__slide__opinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae delectus dolorem eius enim explicabo in iste nisi, placeat provident quae, quasi sapiente soluta unde voluptatem voluptatibus? Aspernatur consequuntur, dicta dignissimos expedita omnis quia, quidem reiciendis rerum sit velit veritatis voluptatibus!</p>
             <h5>JOHN WICK</h5>
             <p>Front-End Developer</p>
             <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
-              <img src="img/testimonials/JOHN-WICK.png" alt="">
+              <img src="img/testimonials/JOHN-WICK.png" alt="img/testimonials/JOHN-WICK.png">
             </a>
           </div>
           <div class="carousel__slide">
+            <p class="carousel__slide__opinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus eius eveniet excepturi, iste minus odit officia officiis perspiciatis, quaerat quia quo reprehenderit suscipit? Amet consequuntur ex id iste magnam minus odio reprehenderit. Consectetur cum optio perferendis possimus recusandae, suscipit!</p>
             <h5>PETER PARKER</h5>
             <p>Tester</p>
             <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
-              <img src="img/testimonials/PETER-PARKER.png" alt="">
+              <img src="img/testimonials/PETER-PARKER.png" alt="img/testimonials/PETER-PARKER.png">
             </a>
           </div>
           <div class="carousel__slide">
+            <p class="carousel__slide__opinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi incidunt ipsam iste, laudantium magni molestias mollitia quae sapiente! Aliquam dignissimos distinctio enim est explicabo hic ipsa laudantium minus, molestiae mollitia natus nemo nisi nobis porro soluta! Blanditiis fugiat quia recusandae.</p>
             <h5>JESSICA JONES</h5>
             <p>Graphics Designer</p>
             <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
-              <img src="img/testimonials/JESSICA-JONES.png" alt="">
+              <img src="img/testimonials/JESSICA-JONES.png" alt="img/testimonials/JESSICA-JONES.png">
             </a>
           </div>
           <div class="carousel__slide">
+            <p class="carousel__slide__opinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur dolores excepturi nam necessitatibus optio! Asperiores deserunt eveniet inventore libero numquam obcaecati odit sit ut. Accusamus alias assumenda commodi corporis maiores placeat qui quo ratione suscipit, voluptatibus? Est, maiores, quisquam.</p>
             <h5>STEVE ROGERS</h5>
             <p>Business Analyst</p>
             <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
-              <img src="img/testimonials/STEVE-ROGERS.png" alt="">
+              <img src="img/testimonials/STEVE-ROGERS.png" alt="img/testimonials/STEVE-ROGERS.png">
             </a>
           </div>
           <div class="carousel__slide">
+            <p class="carousel__slide__opinion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus optio quasi sapiente. Delectus eveniet officia rem! Accusamus at aut autem cumque ex facilis impedit incidunt, neque odio omnis quae quas quia quo repellendus, repudiandae saepe sequi, suscipit temporibus totam veritatis.</p>
             <h5>BRUCE WAYNE</h5>
             <p>System Architect</p>
             <a href="#" class="circle-img-wrapper circle-img-wrapper--big">
-              <img src="img/testimonials/BRUCE-WAYNE.png" alt="">
+              <img src="img/testimonials/BRUCE-WAYNE.png" alt="img/testimonials/BRUCE-WAYNE.png">
             </a>
           </div>
 
@@ -332,27 +341,27 @@
         <ul class="carousel__icons-nav">
           <li class="carousel__icon active">
             <div class="circle-img-wrapper circle-img-wrapper--small">
-              <img src="img/testimonials/JOHN-WICK.png" alt="">
+              <img src="img/testimonials/JOHN-WICK.png" alt="img/testimonials/JOHN-WICK.png">
             </div>
           </li>
           <li class="carousel__icon">
             <div class="circle-img-wrapper circle-img-wrapper--small">
-              <img src="img/testimonials/PETER-PARKER.png" alt="">
+              <img src="img/testimonials/PETER-PARKER.png" alt="img/testimonials/PETER-PARKER.png">
             </div>
           </li>
           <li class="carousel__icon">
             <div class="circle-img-wrapper circle-img-wrapper--small">
-              <img src="img/testimonials/JESSICA-JONES.png" alt="">
+              <img src="img/testimonials/JESSICA-JONES.png" alt="img/testimonials/JESSICA-JONES.png">
             </div>
           </li>
           <li class="carousel__icon">
             <div class="circle-img-wrapper circle-img-wrapper--small">
-              <img src="img/testimonials/STEVE-ROGERS.png" alt="">
+              <img src="img/testimonials/STEVE-ROGERS.png" alt="img/testimonials/STEVE-ROGERS.png">
             </div>
           </li>
           <li class="carousel__icon">
             <div class="circle-img-wrapper circle-img-wrapper--small">
-              <img src="img/testimonials/BRUCE-WAYNE.png" alt="">
+              <img src="img/testimonials/BRUCE-WAYNE.png" alt="img/testimonials/BRUCE-WAYNE.png">
             </div>
           </li>
         </ul>

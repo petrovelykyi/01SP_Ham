@@ -1,4 +1,4 @@
-html * {
+html {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -220,30 +220,89 @@ hr {
 }
 
 .menu {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 600px;
 }
 
 .main-menu a {
   display: flex;
   align-items: center;
   color: #d4d4d4;
-  /*padding: 0 16px;*/
+  margin: 0 8px;
   border-bottom: 3px solid transparent;
   transition: all 0.6s ease;
 }
 
-.menu a:last-child {
-  position: relative;
+.search-container {
+  box-sizing: border-box;
+  position: absolute;
+  top: 49%;
+  right: 0;
+  height: 100%;
 }
 
-.menu a:last-child i {
-  position: absolute;
-  margin-left: 16px;
-  font-size: 18px;
+.form-search {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
+
+.form-search__input {
+  position: absolute;
+  font-size: 100%;
+  line-height: 24px;
+  height: 30px;
+  width: 26px;
+  color: white;
+  padding-left: 8px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+
+.form-search__input::placeholder {
+  color: transparent;
+}
+
+.form-search--searching .form-search__input{
+  width: 160px;
+  border-bottom-color: white;
+}
+
+.form-search--searching .form-search__btn{
+  transform: translateX(168px);
+}
+
+.form-search--searching .form-search__input::placeholder{
+  color: #BBB;
+}
+
+.form-search__btn {
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+  border-color: transparent;
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+
+
+
+
+/*.menu a:last-child {*/
+/*  position: relative;*/
+/*}*/
+
+/*.menu a:last-child i {*/
+/*  position: absolute;*/
+/*  margin-left: 16px;*/
+/*  font-size: 18px;*/
+/*}*/
 
 .main-menu a:hover {
   color: #18CFAB;
@@ -272,19 +331,19 @@ hr {
   margin-bottom: 140px;
 }
 
-.home-header-1 {
+.home-header-medium {
   font-size: 36px;
   font-weight: 700;
   margin: 16px;
 }
 
-.home-header-2 {
+.home-header-big {
   font-size: 80px;
   font-weight: 700;
   margin: 16px;
 }
 
-.home-header-3 {
+.home-header-small {
   font-size: 32px;
   font-weight: 300;
   color: #d4d4d4;
@@ -685,7 +744,7 @@ hr {
 
 .carousel {
   box-sizing: border-box;
-  height: 400px;
+  height: 540px;
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -693,7 +752,7 @@ hr {
 }
 
 .carousel__track-wrapper {
-  width: 512px;
+  width: 1000px;
   height: 80%;
   margin: 0 auto;
   overflow: hidden;
@@ -713,6 +772,12 @@ hr {
   bottom: 0;
   width: 100%;
   padding: 16px;
+}
+
+.carousel__slide__opinion {
+  font-size: 16px;
+  line-height: 30px;
+  margin: 0 auto 40px auto;
 }
 
 .carousel__icons {
@@ -790,14 +855,6 @@ hr {
 
 .section-testimonials>img {
   margin-bottom: 40px;
-}
-
-.section-testimonials>p {
-  width: 1000px;
-  color: #bbbbbb;
-  font-size: 16px;
-  line-height: 30px;
-  margin: 0 auto 40px auto;
 }
 
 .carousel__slide>h5 {
